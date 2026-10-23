@@ -4,6 +4,7 @@ import { getTaskById } from "../hooks/getTaskById";
 import { Task } from "../../../types/task";
 import TaskDetail from "../components/TaskDetail";
 import styles from "../styles/taskDetail.module.css";
+import TaskDeleteButton from "../components/TaskDeleteButton";
 
 export default function TaskDetailContainer() {
   // URLからタスクIDを取得
@@ -39,6 +40,9 @@ export default function TaskDetailContainer() {
   return (
     <div className={styles.taskDetailContainer}>
       <TaskDetail task={task} />{/* 取得したタスク情報をTaskDetailコンポーネントに渡す */}
+      <div>
+        <TaskDeleteButton id={id} />
+      </div>
     </div>
   );
 }
